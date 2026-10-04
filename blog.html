@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#030b1f">
+<meta name="description" content="Tech Journal by Chris Tec Solutions & Accessories: practical articles on software development, databases, Android, cybersecurity and business technology.">
+<title>Tech Journal | Chris Tec Solutions & Accessories</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#030b1f;--bg2:#06173a;--card:#081c46;--blue:#0a84ff;--cyan:#12c2ff;--violet:#7c3aed;--lilac:#a78bfa;--green:#10b981;--mint:#34d399;--red:#e11d48;--rose:#fb7185;--line:rgba(80,160,255,.28);--muted:#b4c7e3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(84px + env(safe-area-inset-top,0px))}
+body{margin:0;background:radial-gradient(900px 500px at 10% 0,#0b2a66 0,transparent 60%),var(--bg);color:#fff;font:400 16px/1.65 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.logo{font-family:Poppins,Inter,system-ui,sans-serif;margin:0;line-height:1.15}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+/* header */
+header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(3,11,31,.95),rgba(5,22,60,.9));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav{display:flex;align-items:center;gap:22px;height:76px}
+.logo{display:flex;align-items:center;gap:12px}
+.mark{width:48px;height:48px;display:grid;place-items:center;font:800 24px Poppins;border-radius:14px;background:linear-gradient(135deg,#19c8ff,#0a4fd0);box-shadow:0 0 20px rgba(18,194,255,.5),inset 0 2px 0 rgba(255,255,255,.4);text-shadow:2px 2px 0 #06307a}
+.brand{font:800 19px Poppins;line-height:1.1}.brand small{display:block;font:500 11px Inter;color:#58cbff;margin-top:3px}
+.links{display:flex;gap:2px;margin-left:auto}
+.links a{padding:10px 16px;border-radius:999px;font-size:14px;font-weight:500;transition:background .25s}
+.links a:hover{background:rgba(255,255,255,.1)}
+.links a.on{background:linear-gradient(180deg,#2a9bff,#0a62e6);box-shadow:0 0 18px rgba(10,132,255,.6)}
+.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:#fff;border-radius:12px;width:44px;height:44px;place-items:center;cursor:pointer}
+@media(max-width:900px){.burger{display:grid}.links{position:absolute;left:0;right:0;top:100%;flex-direction:column;background:rgba(3,11,31,.98);padding:12px 22px 18px;display:none;margin:0}.links.open{display:flex}.links a{padding:13px 16px}}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:12px;font:600 14.5px Inter;border:1px solid;cursor:pointer;color:#fff;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px)}
+.b1{background:linear-gradient(180deg,#27a0ff,#0a62e6);border-color:#5bbcff;box-shadow:0 0 20px rgba(10,132,255,.5)}
+.b2{background:rgba(10,30,80,.6);border-color:#4aa6ff}
+.bv{background:linear-gradient(180deg,#8b5cf6,#6d28d9);border-color:#a78bfa;box-shadow:0 0 20px rgba(124,58,237,.5)}
+.bg{background:linear-gradient(180deg,#10b981,#047857);border-color:#34d399;box-shadow:0 0 18px rgba(16,185,129,.4)}
+.br{background:linear-gradient(180deg,#f43f5e,#be123c);border-color:#fb7185;box-shadow:0 0 20px rgba(244,63,94,.45)}
+/* hero */
+.hero{background:radial-gradient(700px 420px at 85% 30%,rgba(124,58,237,.38),transparent 65%),radial-gradient(700px 420px at 10% 80%,rgba(18,110,255,.4),transparent 65%),linear-gradient(180deg,#041033,#062356 75%,#041033);border-bottom:1px solid var(--line)}
+.hero .wrap{padding-top:64px;padding-bottom:64px;max-width:900px;text-align:center}
+.pill{display:inline-block;padding:6px 16px;border-radius:999px;border:1px solid var(--mint);color:var(--mint);background:rgba(16,185,129,.1);font:600 13px Inter;margin-bottom:20px}
+h1{font-weight:800;font-size:clamp(36px,6vw,64px);letter-spacing:-.5px}
+h1 span{background:linear-gradient(90deg,var(--cyan),var(--lilac));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:#dbe8fa;max-width:620px;margin:18px auto 28px;font-size:18px}
+.search{display:flex;gap:8px;max-width:620px;margin:0 auto;background:rgba(6,23,58,.9);border:1px solid #4aa6ff;border-radius:16px;padding:6px 6px 6px 16px;align-items:center;box-shadow:0 0 28px rgba(10,132,255,.3)}
+.search input{flex:1;min-width:0;background:none;border:0;color:#fff;font:400 16px Inter;padding:10px 0}
+.search input::placeholder{color:#8fa8cc}.search input:focus{outline:0}
+.search:focus-within{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(18,194,255,.35)}
+/* sections */
+section{padding:56px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.sh h2{font-size:clamp(26px,3.4vw,36px)}.sh p{margin:6px 0 0;color:var(--muted)}
+/* categories */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:rgba(8,28,70,.7);color:#fff;font:500 14px Inter;cursor:pointer;transition:background .2s,border-color .2s}
+.chip:hover{border-color:var(--cyan)}
+.chip[aria-pressed=true]{background:linear-gradient(180deg,#8b5cf6,#6d28d9);border-color:#a78bfa}
+.chip b{font-weight:600;font-size:12px;background:rgba(255,255,255,.14);border-radius:99px;padding:1px 8px}
+/* featured */
+.feat{display:grid;grid-template-columns:1.1fr 1fr;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:linear-gradient(135deg,#081c46,#150f3d)}
+.feat .art{min-height:340px}
+.feat .body{padding:34px;display:flex;flex-direction:column;gap:14px;justify-content:center}
+.feat h3{font-size:clamp(24px,3vw,34px)}
+.feat p{margin:0;color:#dbe8fa}
+.flag{align-self:flex-start;background:var(--red);padding:4px 12px;border-radius:8px;font:600 13px Inter}
+@media(max-width:860px){.feat{grid-template-columns:1fr}.feat .art{min-height:220px}.feat .body{padding:24px}}
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card);transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--cyan)}
+.art{position:relative;display:grid;place-items:center;height:170px;overflow:hidden}
+.art svg{width:64px;height:64px;fill:none;stroke:#fff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;position:relative;filter:drop-shadow(0 4px 14px rgba(0,0,0,.4))}
+.art::before,.art::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.1)}
+.art::before{width:220px;height:220px;right:-70px;top:-90px}.art::after{width:150px;height:150px;left:-40px;bottom:-70px}
+.feat .art svg{width:96px;height:96px}
+.cbody{display:flex;flex-direction:column;gap:10px;padding:20px;flex:1}
+.cat{align-self:flex-start;font:600 12.5px Inter;padding:3px 11px;border-radius:99px;border:1px solid}
+.card h3{font-size:19px}.card p{margin:0;color:var(--muted);font-size:15px}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;color:#9db6d9;font-size:13px}
+.meta span{display:inline-flex;align-items:center;gap:6px}.meta svg.i{width:15px;height:15px}
+.au{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:500}
+.av{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font:700 11px Poppins;background:linear-gradient(135deg,var(--cyan),var(--violet))}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tags a{font-size:12.5px;color:var(--lilac);background:rgba(124,58,237,.16);padding:2px 10px;border-radius:6px}
+.more{margin-top:auto;padding-top:6px}
+.more a{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--cyan);padding:8px 0}
+.more a:hover{color:#fff}
+.none{display:none;text-align:center;padding:40px 16px;border:1px dashed var(--line);border-radius:18px;color:var(--muted)}
+/* newsletter + cta */
+.nl{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;padding:36px;border-radius:22px;border:1px solid #6d28d9;background:linear-gradient(135deg,#1e1065,#0a2a6e)}
+.nl h2{font-size:clamp(24px,3vw,32px);margin-bottom:8px}.nl p{margin:0;color:#dbe8fa}
+.nl form{display:flex;gap:8px;flex-wrap:wrap}
+.nl input{flex:1;min-width:200px;padding:14px 16px;border-radius:12px;border:1px solid #4aa6ff;background:rgba(3,11,31,.7);color:#fff;font:400 16px Inter}
+.nl input:focus{outline:0;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(18,194,255,.35)}
+.ok{flex-basis:100%;margin:6px 0 0;color:var(--mint);font-weight:500;min-height:1.5em}
+@media(max-width:800px){.nl{grid-template-columns:1fr;padding:26px}}
+.cta{text-align:center;padding:48px 24px;border-radius:22px;border:1px solid var(--line);background:radial-gradient(500px 240px at 50% 0,rgba(225,29,72,.22),transparent 70%),linear-gradient(180deg,#06173a,#041033)}
+.cta h2{font-size:clamp(26px,3.6vw,40px)}.cta p{max-width:620px;margin:14px auto 24px;color:#dbe8fa}
+.cta .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:var(--muted);font-size:14px}
+footer a{color:var(--cyan)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap"><nav>
+<a class="logo" href="index.html" aria-label="Chris Tec Solutions home"><span class="mark">C</span><span class="brand">Chris Tec Solutions<small>& Accessories</small></span></a>
+<div class="links" id="links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="accessories.html">Products</a><a href="blog.html" class="on" aria-current="page">Blog</a><a href="contact.html">Contact</a></div>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</nav></div>
+</header>
+
+<main>
+<div class="hero"><div class="wrap">
+<span class="pill">Tech Journal</span>
+<h1>Practical technology insight, <span>straight from the workshop</span></h1>
+<p>Guides on software, databases, Android, security and everyday IT, written for developers, business owners and curious people across Uganda and beyond.</p>
+<form class="search" role="search" id="sform"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+<input id="q" type="search" placeholder="Search articles, topics or tags" aria-label="Search articles"><button class="btn b1" type="submit">Search</button></form>
+</div></div>
+
+<section id="categories"><div class="wrap">
+<div class="sh"><div><h2>Browse by category</h2><p>Pick a topic to filter the articles below.</p></div></div>
+<div class="chips" id="chips"></div>
+</div></section>
+
+<section id="featured" style="padding-top:0"><div class="wrap">
+<div class="sh"><h2>Featured article</h2></div>
+<article class="feat" id="feat"></article>
+</div></section>
+
+<section id="latest" style="padding-top:0"><div class="wrap">
+<div class="sh"><div><h2 id="ltitle">Latest articles</h2><p id="lcount"></p></div></div>
+<div class="grid" id="grid"></div>
+<div class="none" id="none"><h3>No articles found</h3><p>Try a different keyword or choose another category.</p><button class="btn b2" id="reset">Show all articles</button></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<div class="nl">
+<div><h2>Get new articles in your inbox</h2><p>One short email when we publish. Tips, tutorials and tech news, with no spam.</p></div>
+<form id="nl" novalidate><input type="email" id="em" placeholder="Your email address" aria-label="Email address" required><button class="btn bg" type="submit">Subscribe</button><p class="ok" id="ok" role="status"></p></form>
+</div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<div class="cta">
+<h2>Have a software project in mind?</h2>
+<p>From websites and Android apps to databases and business systems, Chris Tec Solutions builds reliable software tailored to how you work.</p>
+<div class="row"><a class="btn br" href="contact.html">Contact us for software development</a><a class="btn b2" href="services.html">View our services</a></div>
+</div>
+</div></section>
+</main>
+
+<footer><div class="wrap">&copy; <span id="yr"></span> Chris Tec Solutions & Accessories. <a href="contact.html">Get in touch</a></div></footer>
+
+<script>
+const I={
+code:'<path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/>',
+prog:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 10 3 2-3 2M13 15h4"/>',
+db:'<ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>',
+and:'<rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/>',
+sec:'<path d="M12 3 4 6v6c0 5 3.4 8 8 9 4.6-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>',
+fix:'<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.2-.5-.5-2.2z"/>',
+tip:'<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/>',
+biz:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/>'};
+const C={
+"Software Development":{k:'code',a:'#0a84ff',b:'#12c2ff',t:'#7dd3fc'},
+"Programming":{k:'prog',a:'#6d28d9',b:'#a78bfa',t:'#c4b5fd'},
+"SQL & Databases":{k:'db',a:'#0a4fd0',b:'#7c3aed',t:'#a5b4fc'},
+"Android Development":{k:'and',a:'#047857',b:'#34d399',t:'#6ee7b7'},
+"Cybersecurity":{k:'sec',a:'#be123c',b:'#7c3aed',t:'#fda4af'},
+"Computer Maintenance":{k:'fix',a:'#0a62e6',b:'#10b981',t:'#7dd3fc'},
+"Technology Tips":{k:'tip',a:'#7c3aed',b:'#e11d48',t:'#fbcfe8'},
+"Business Technology":{k:'biz',a:'#06173a',b:'#0a84ff',t:'#93c5fd'}};
+const A=[
+{t:"How to plan a software project that finishes on time and on budget",c:"Software Development",d:"2026-09-28",m:9,tg:["Planning","Agile","Project Management"],x:"Scope, milestones and honest estimates: a practical framework for turning a rough idea into a delivered product.",f:1},
+{t:"Clean code habits every beginner programmer should build early",c:"Programming",d:"2026-09-24",m:7,tg:["Clean Code","JavaScript","Best Practices"],x:"Naming, small functions and useful comments. Habits that make your code easier to read, test and change."},
+{t:"SQL joins explained with real shop inventory examples",c:"SQL & Databases",d:"2026-09-19",m:8,tg:["SQL","Joins","Inventory"],x:"INNER, LEFT and RIGHT joins made simple, using products, suppliers and sales tables you can recreate yourself."},
+{t:"Building your first Android app: a step-by-step starting guide",c:"Android Development",d:"2026-09-14",m:11,tg:["Android","Flutter","Mobile"],x:"Choose your tools, set up your environment and ship a working app to a real phone in one weekend."},
+{t:"Seven steps to protect your business from phishing and ransomware",c:"Cybersecurity",d:"2026-09-09",m:6,tg:["Phishing","Ransomware","Security"],x:"Strong passwords, backups, updates and staff awareness: the basics that stop most attacks."},
+{t:"Why your laptop is slow and how to speed it up safely",c:"Computer Maintenance",d:"2026-09-03",m:5,tg:["Laptops","Windows","Performance"],x:"Check startup apps, storage health and dust before you spend money on new hardware."},
+{t:"Ten everyday technology tips that save time and data",c:"Technology Tips",d:"2026-08-27",m:4,tg:["Productivity","Mobile Data","Shortcuts"],x:"Small settings and shortcuts that cut wasted time, protect your battery and stretch your data bundle."},
+{t:"Choosing business software: custom build or ready-made?",c:"Business Technology",d:"2026-08-20",m:8,tg:["Business","Software","Strategy"],x:"A clear way to compare cost, flexibility and support so you pick the right system for your company."},
+{t:"Backing up your databases: a simple strategy that works",c:"SQL & Databases",d:"2026-08-12",m:7,tg:["Backup","MySQL","Data Safety"],x:"Full, incremental and offsite backups explained, plus how to test that you can actually restore."}
+];
+const AUTH="Chris";
+const $=s=>document.querySelector(s);
+const ic=(p)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${p}</svg>`;
+const fmt=d=>new Date(d+"T00:00:00").toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"});
+const art=a=>{const c=C[a.c];return `<div class="art" role="img" aria-label="${a.c} illustration" style="background:linear-gradient(135deg,${c.a},${c.b})"><svg viewBox="0 0 24 24">${I[c.k]}</svg></div>`};
+const meta=a=>`<div class="meta"><span class="au"><span class="av">${AUTH[0]}</span>${AUTH}</span><span>${ic('<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>')}<time datetime="${a.d}">${fmt(a.d)}</time></span><span>${ic('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>')}${a.m} min read</span></div>`;
+const tags=a=>`<div class="tags">${a.tg.map(t=>`<a href="#latest" data-tag="${t}">#${t}</a>`).join("")}</div>`;
+const catb=a=>{const c=C[a.c];return `<span class="cat" style="color:${c.t};border-color:${c.t}55;background:${c.a}33">${a.c}</span>`};
+const more=a=>`<div class="more"><a href="contact.html" aria-label="Read more: ${a.t}">Read more ${ic('<path d="M5 12h14M13 6l6 6-6 6"/>')}</a></div>`;
+let cat="All",q="";
+function chips(){
+ const names=["All",...Object.keys(C)];
+ $("#chips").innerHTML=names.map(n=>{const k=n==="All"?A.length:A.filter(a=>a.c===n).length;return `<button class="chip" data-c="${n}" aria-pressed="${n===cat}">${n}<b>${k}</b></button>`}).join("");
+}
+function feat(){
+ const a=A.find(x=>x.f);
+ $("#feat").innerHTML=`${art(a)}<div class="body"><span class="flag">Featured</span>${catb(a)}<h3>${a.t}</h3><p>${a.x}</p>${meta(a)}${tags(a)}<div><a class="btn b1" href="contact.html" aria-label="Read more: ${a.t}">Read more</a></div></div>`;
+}
+function list(){
+ const s=q.trim().toLowerCase();
+ const r=A.filter(a=>!a.f).filter(a=>(cat==="All"||a.c===cat)&&(!s||(a.t+a.x+a.c+a.tg.join(" ")).toLowerCase().includes(s)));
+ $("#grid").innerHTML=r.map(a=>`<article class="card">${art(a)}<div class="cbody">${catb(a)}<h3>${a.t}</h3><p>${a.x}</p>${meta(a)}${tags(a)}${more(a)}</div></article>`).join("");
+ $("#none").style.display=r.length?"none":"block";
+ $("#ltitle").textContent=cat==="All"?"Latest articles":cat;
+ $("#lcount").textContent=r.length+(r.length===1?" article":" articles")+(s?` matching “${q.trim()}”`:"");
+}
+document.addEventListener("click",e=>{
+ const c=e.target.closest(".chip");if(c){cat=c.dataset.c;chips();list();$("#latest").scrollIntoView();return}
+ const t=e.target.closest("[data-tag]");if(t){e.preventDefault();q=t.dataset.tag;$("#q").value=q;cat="All";chips();list();$("#latest").scrollIntoView();return}
+ if(e.target.closest(".more a,.feat .btn"))e.preventDefault();
+});
+$("#q").addEventListener("input",e=>{q=e.target.value;list()});
+$("#sform").addEventListener("submit",e=>{e.preventDefault();list();$("#latest").scrollIntoView()});
+$("#reset").addEventListener("click",()=>{q="";cat="All";$("#q").value="";chips();list()});
+$("#nl").addEventListener("submit",e=>{e.preventDefault();const v=$("#em").value.trim(),o=$("#ok");
+ if(!/^\S+@\S+\.\S+$/.test(v)){o.style.color="#fb7185";o.textContent="Enter a valid email address, for example name@example.com.";return}
+ o.style.color="";o.textContent="Subscribed. Watch your inbox for the next article.";$("#em").value=""});
+$("#burger").addEventListener("click",function(){const o=$("#links").classList.toggle("open");this.setAttribute("aria-expanded",o)});
+$("#yr").textContent=new Date().getFullYear();
+chips();feat();list();
+</script>
+</body>
+</html>
